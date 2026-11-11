@@ -22,3 +22,5 @@ Progres, jadwal FSRS, pengaturan, dan riwayat review disimpan di perangkat melal
 - `icon-192.svg`, `icon-512.svg`: ikon aplikasi.
 
 **Catatan:** repository ini bersifat publik karena menggunakan GitHub Pages gratis. Isi aplikasi dan kosakata dapat dilihat publik; progres belajar tidak ikut diunggah.
+
+Deployment dipicu ulang setelah GitHub Pages diatur ke **GitHub Actions**.
