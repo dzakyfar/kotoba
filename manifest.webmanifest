@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Kotoba — Belajar Bahasa Jepang",
+  "short_name": "Kotoba",
+  "description": "Belajar kosakata Minna no Nihongo dengan jadwal pengulangan FSRS-6. Data tersimpan di perangkat.",
+  "lang": "id-ID",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f5f0",
+  "theme_color": "#315d4b",
+  "icons": [
+    {"src":"./icon-192.svg","sizes":"any","type":"image/svg+xml","purpose":"any"},
+    {"src":"./icon-512.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
