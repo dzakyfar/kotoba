@@ -1,16 +1,17 @@
-const CACHE_NAME = "kotoba-fsrs6-v4-20261111";
+const CACHE_NAME = "kotoba-fsrs6-v4-20261111b";
 const CORE = [
   "./","./index.html","./manifest.webmanifest","./sw.js",
   "./icon-192.svg","./icon-512.svg",
-  "./payload/part-01.b64",
-  "./payload/part-02.b64",
-  "./payload/part-03.b64",
-  "./payload/part-04.b64",
-  "./payload/part-05.b64",
-  "./payload/part-06.b64",
-  "./payload/part-07.b64",
-  "./payload/part-08.b64",
-  "./payload/part-09.b64"
+  "./payload/part-01.b64","./payload/tail-01.b64",
+  "./payload/part-02.b64","./payload/part-03.b64","./payload/part-04.b64",
+  "./payload/chunk-05.b64","./payload/tail-05.b64",
+  "./payload/chunk-06.b64","./payload/chunk-07.b64",
+  "./payload/part-08.b64","./payload/part-09.b64","./payload/part-10.b64","./payload/part-11.b64",
+  "./payload/part-12.b64","./payload/tail-12.b64",
+  "./payload/part-13.b64","./payload/part-14.b64",
+  "./payload/part-15.b64","./payload/tail-15.b64",
+  "./payload/part-16.b64","./payload/tail-16.b64",
+  "./payload/part-17.b64"
 ];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
