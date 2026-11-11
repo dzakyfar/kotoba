@@ -1,4 +1,4 @@
-const CACHE_NAME = "kotoba-fsrs6-v4-20261111b";
+const CACHE_NAME = "kotoba-fsrs6-v5-20261111c";
 const CORE = [
   "./","./index.html","./manifest.webmanifest","./sw.js",
   "./icon-192.svg","./icon-512.svg",
@@ -28,5 +28,5 @@ self.addEventListener("fetch", event => {
       caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
     }
     return response;
-  }).catch(() => caches.match("./index.html"))));
+  }).catch(() => request.mode === "navigate" ? caches.match("./index.html") : new Response("Berkas Kotoba tidak dapat dimuat. Periksa koneksi lalu muat ulang.", {status: 503, headers: {"Content-Type":"text/plain; charset=utf-8"}}))));
 });
