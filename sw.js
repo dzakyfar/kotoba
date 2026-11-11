@@ -3,7 +3,7 @@ const CORE = [
   "./","./index.html","./manifest.webmanifest","./sw.js",
   "./icon-192.svg","./icon-512.svg",
   "./payload/part-01.b64","./payload/tail-01.b64",
-  "./payload/part-02.b64","./payload/part-03.b64","./payload/part-04.b64",
+  "./payload/chunk-02.b64","./payload/chunk-03.b64","./payload/chunk-04.b64",
   "./payload/chunk-05.b64","./payload/tail-05.b64",
   "./payload/chunk-06.b64","./payload/chunk-07.b64",
   "./payload/part-08.b64","./payload/part-09.b64","./payload/part-10.b64","./payload/part-11.b64",
