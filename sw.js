@@ -1,4 +1,4 @@
-const CACHE_NAME = "kotoba-fsrs6-v5-20261111c";
+const CACHE_NAME = "kotoba-fsrs6-v6-20261111d";
 const CORE = [
   "./","./index.html","./manifest.webmanifest","./sw.js",
   "./icon-192.svg","./icon-512.svg",
