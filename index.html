@@ -23,11 +23,22 @@ img{width:72px;height:72px}h1{margin:14px 0 6px;font-size:27px}p{color:#70786f;l
 </main>
 <script>
 (async()=>{
-  const parts = ["payload/part-01.b64","payload/part-02.b64","payload/part-03.b64","payload/part-04.b64","payload/part-05.b64","payload/part-06.b64","payload/part-07.b64","payload/part-08.b64","payload/part-09.b64"];
-  if (!("DecompressionStream" in window)) throw new Error("Browser belum mendukung pembukaan aplikasi. Perbarui Chrome.");
+  const parts = [
+    "payload/part-01.b64","payload/tail-01.b64",
+    "payload/part-02.b64","payload/part-03.b64","payload/part-04.b64",
+    "payload/chunk-05.b64","payload/tail-05.b64",
+    "payload/chunk-06.b64","payload/chunk-07.b64",
+    "payload/part-08.b64","payload/part-09.b64","payload/part-10.b64","payload/part-11.b64",
+    "payload/part-12.b64","payload/tail-12.b64",
+    "payload/part-13.b64","payload/part-14.b64",
+    "payload/part-15.b64","payload/tail-15.b64",
+    "payload/part-16.b64","payload/tail-16.b64",
+    "payload/part-17.b64"
+  ];
+  if (!("DecompressionStream" in window)) throw new Error("Perbarui Chrome untuk membuka Kotoba.");
   const texts = await Promise.all(parts.map(async path=>{
-    const response = await fetch("./"+path, {cache:"no-store"});
-    if(!response.ok) throw new Error("File aplikasi tidak ditemukan: "+path);
+    const response = await fetch("./"+path);
+    if(!response.ok) throw new Error("Berkas aplikasi tidak ditemukan: "+path);
     return response.text();
   }));
   const b64 = texts.join("").replace(/\s+/g,"");
@@ -36,11 +47,12 @@ img{width:72px;height:72px}h1{margin:14px 0 6px;font-size:27px}p{color:#70786f;l
   for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
   const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
   const html = await new Response(stream).text();
+  if(!html.startsWith("<!DOCTYPE") && !html.startsWith("<html")) throw new Error("Isi aplikasi tidak terbaca. Muat ulang halaman.");
   document.open();
   document.write(html);
   document.close();
 })().catch(error=>{
-  document.getElementById("status").textContent="Aplikasi belum bisa dibuka.";
+  document.getElementById("status").textContent="Kotoba belum bisa dibuka.";
   document.getElementById("err").textContent=error?.message||String(error);
 });
 </script>
